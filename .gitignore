@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+.venv/
+
+outputs/
+cluster_results/
+cluster_logs/
+batch_logs/
+combined_sweep/
+
+cluster_jobs/*.txt
+cluster_jobs/*.sbatch
+
+gdsc_all_features.csv

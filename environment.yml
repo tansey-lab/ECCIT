@@ -1,0 +1,17 @@
+name: eccit
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - pytorch
+  - matplotlib
+  - scikit-learn
+  - statsmodels
+  - xgboost
+  - tqdm
+  - dill
+  - joblib
+  - pip
