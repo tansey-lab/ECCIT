@@ -1,11 +1,17 @@
 # ECCIT
 
+ECCIT (Empirically Calibrated Conditional Independence Tests) is a framework for empirically calibrating conditional independence tests (CITs) when nominal guarantees break down in practice. CITs can be miscalibrated due to finite-sample effects or model misspecification, which can distort null p-values and cause inflated false discoveries from the test procedures.
+
+ECCIT addresses this by adversarially constructing responses that expose miscalibration for a chosen base test (e.g., GCM or HRT), then fitting a monotone calibration map to correct the resulting p-values or testing thresholds. The framework is test-agnostic and supports calibration under different metrics based around type-I error or false discovery rates.
+
+This repository contains the code used to run ECCIT experiments, reproduce benchmark sweeps, and generate plots for local and cluster workflows.
+
+---
+
+
 ## Setup
 
 ```bash
-conda env create -f environment.yml
-conda activate eccit
-# or:
 pip install -e .
 ```
 
