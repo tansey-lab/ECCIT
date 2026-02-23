@@ -1,8 +1,10 @@
 # ECCIT
 
-ECCIT (Empirically Calibrated Conditional Independence Tests) is a framework for empirically calibrating conditional independence tests (CITs) when nominal guarantees break down in practice. CITs can be miscalibrated due to finite-sample effects or model misspecification, which can distort null p-values and cause inflated false discoveries from the test procedures.
+ECCIT (Empirically Calibrated Conditional Independence Tests) is a framework for calibrating conditional independence tests (CITs) in settings where nominal guarantees fail in practice. Conditional independence tests are widely used for causal discovery and feature selection, but even when paired with false discovery rate (FDR) control procedures, they can fail to provide reliable frequentist guarantees.
 
-ECCIT addresses this by adversarially constructing responses that expose miscalibration for a chosen base test (e.g., GCM or HRT), then fitting a monotone calibration map to correct the resulting p-values or testing thresholds. The framework is test-agnostic and supports calibration under different metrics based around type-I error or false discovery rates.
+Two common failure modes are finite-sample error and model misspecification. In small samples, asymptotic approximations can be inaccurate, and even correctly specified models may fail to estimate noise levels well enough to control error. In larger samples, misspecified models can induce non-uniform null \(p\)-values through unaccounted dependencies, which in turn distorts downstream multiple-testing behavior.
+
+ECCIT measures and corrects this miscalibration. For a chosen base CIT, such as the Generalized Covariance Measure (GCM) or the Holdout Randomization Test (HRT), ECCIT optimizes an adversary that selects features and response functions to maximize a miscalibration metric, then fits a monotone calibration map to adjust the resulting \(p\)-values or testing thresholds.
 
 This repository contains the code used to run ECCIT experiments, reproduce benchmark sweeps, and generate plots for local and cluster workflows.
 
